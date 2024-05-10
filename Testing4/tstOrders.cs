@@ -95,5 +95,161 @@ namespace Testing4
             //test to see that the two values are the same
             Assert.AreEqual(AnOrder.Status, TestData);
         }
+
+
+        [TestMethod]
+        public void FindMethodOk()
+        {
+            //create an instance of the class we want to create
+            clsOrders AnOrder = new clsOrders();
+            //create new Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 OrderId = 21;
+            //invoke the method 
+            Found = AnOrder.Find(OrderId);
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+
+        }
+
+        [TestMethod]
+        public void TestOrderIdFound()
+        {
+            //create an instance of the class we want to create
+            clsOrders AnOrder = new clsOrders();
+            //create new Boolean variable to store the results of the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is lol)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 OrderId = 21;
+            //invoke the method 
+            Found = AnOrder.Find(OrderId);
+            //check the order id
+            if (AnOrder.OrderId != 21)
+            {
+                OK = false;
+            }
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestCustomerIdFound()
+        {
+            //create an instance of the class we want to create
+            clsOrders AnOrder = new clsOrders();
+            //create new Boolean variable to store the results of the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is lol)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerId = 22;
+            //invoke the method 
+            Found = AnOrder.Find(CustomerId);
+            //check the customer id
+            if (AnOrder.CustomerId != 22)
+            {
+                OK = false;
+            }
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestTotalAmountFound()
+        {
+            //create an instance of the class we want to create
+            clsOrders AnOrder = new clsOrders();
+            //create new Boolean variable to store the results of the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is lol)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 TotalAmount = 21;
+            //invoke the method 
+            Found = AnOrder.Find(TotalAmount);
+            //check the customer id
+            if (AnOrder.TotalAmount != 23.00m)
+            {
+                OK = false;
+            }
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestOrderDateFound()
+        {
+            //create an instance of the class we want to create
+            clsOrders AnOrder = new clsOrders();
+            //create new Boolean variable to store the results of the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is lol)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 OrderId = 21;
+            //invoke the method 
+            Found = AnOrder.Find(OrderId);
+            //check the order id
+            if (AnOrder.OrderDate != Convert.ToDateTime("23/12/2022"))
+            {
+                OK = false;
+            }
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+
+        }
+
+        [TestMethod]
+        public void TestCompleteFound()
+        {
+            //create an instance of the class we want to create
+            clsOrders AnOrder = new clsOrders();
+            //create new Boolean variable to store the results of the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is lol)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 OrderId = 21;
+            //invoke the method 
+            Found = AnOrder.Find(OrderId);
+            //check the customer id
+            if (AnOrder.Complete != true)
+            {
+                OK = false;
+            }
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+
+        }
+
+
+        [TestMethod]
+        public void TestStatusFound()
+        {
+            //create an instance of the class we want to create
+            clsOrders AnOrder = new clsOrders();
+            //create new Boolean variable to store the results of the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is lol)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 OrderId = 21;
+            //invoke the method 
+            Found = AnOrder.Find(OrderId);
+            //check the customer id
+            if (AnOrder.Status != "pending")
+            {
+                OK = false;
+            }
+            //test to see if the result is correct
+            Assert.IsTrue(OK);
+
+        }
     }
 }
