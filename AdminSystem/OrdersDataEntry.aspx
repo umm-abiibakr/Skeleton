@@ -18,6 +18,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtOrderId" runat="server" height="21px" width="178px"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
             <br />
             <br />
             <asp:Label ID="lblCustomerId" runat="server" Text="Customer ID" width="120px"></asp:Label>
@@ -47,9 +49,9 @@
             <asp:Label ID="lblError" runat="server" height="26px" width="60px"></asp:Label>
             <br />
             <br />
-            &nbsp;<asp:Button ID="btnOK" runat="server" height="26px" OnClick="btnOK_Click" Text="OK" width="60px" />
+            &nbsp;<asp:Button ID="btnOK" runat="server" height="29px" OnClick="btnOK_Click" Text="OK" width="68px" />
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" height="29px" width="68px" />
         </div>
     </form>
 </body>
