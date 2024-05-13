@@ -89,7 +89,7 @@ namespace Testing4
         { //create an instance of the class we want to create
             clsOrders AnOrder = new clsOrders();
             //create some test data to assign to the property
-            string TestData = "Pending";
+            string TestData = "Processing";
             //assign the data to the property 
             AnOrder.Status = TestData;
             //test to see that the two values are the same
@@ -105,7 +105,7 @@ namespace Testing4
             //create new Boolean variable to store the results of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 OrderId = 21;
+            Int32 OrderId = 14;
             //invoke the method 
             Found = AnOrder.Find(OrderId);
             //test to see if the result is true
@@ -123,11 +123,11 @@ namespace Testing4
             //create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 OrderId = 21;
+            Int32 OrderId = 14;
             //invoke the method 
             Found = AnOrder.Find(OrderId);
             //check the order id
-            if (AnOrder.OrderId != 21)
+            if (AnOrder.OrderId != 14)
             {
                 OK = false;
             }
@@ -146,11 +146,11 @@ namespace Testing4
             //create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerId = 22;
+            Int32 OrderId = 14;
             //invoke the method 
-            Found = AnOrder.Find(CustomerId);
+            Found = AnOrder.Find(OrderId);
             //check the customer id
-            if (AnOrder.CustomerId != 22)
+            if (AnOrder.CustomerId != 12345)
             {
                 OK = false;
             }
@@ -169,11 +169,11 @@ namespace Testing4
             //create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 TotalAmount = 21;
+            Int32 OrderId = 14;
             //invoke the method 
-            Found = AnOrder.Find(TotalAmount);
+            Found = AnOrder.Find(OrderId);
             //check the customer id
-            if (AnOrder.TotalAmount != 23.00m)
+            if (AnOrder.TotalAmount != 12000000m)
             {
                 OK = false;
             }
@@ -192,11 +192,11 @@ namespace Testing4
             //create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 OrderId = 21;
+            Int32 OrderId = 14;
             //invoke the method 
             Found = AnOrder.Find(OrderId);
             //check the order id
-            if (AnOrder.OrderDate != Convert.ToDateTime("23/12/2022"))
+            if (AnOrder.OrderDate != Convert.ToDateTime("12/05/2024"))
             {
                 OK = false;
             }
@@ -215,11 +215,11 @@ namespace Testing4
             //create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 OrderId = 21;
+            Int32 OrderId = 14;
             //invoke the method 
             Found = AnOrder.Find(OrderId);
             //check the customer id
-            if (AnOrder.Complete != true)
+            if (AnOrder.Complete != false)
             {
                 OK = false;
             }
@@ -239,11 +239,11 @@ namespace Testing4
             //create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 OrderId = 21;
+            Int32 OrderId = 14;
             //invoke the method 
             Found = AnOrder.Find(OrderId);
             //check the customer id
-            if (AnOrder.Status != "pending")
+            if (AnOrder.Status != "Processing")
             {
                 OK = false;
             }
