@@ -105,7 +105,7 @@ namespace ClassLibrary
             //execute the stored procedure
             DB.Execute("sproc_tblOrders_FilterByOrderId");
             //if one record is found (there should be either one or zero)
-            if (DB.Count ==1 )
+            if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members 
                 mOrderId = Convert.ToInt32(DB.DataTable.Rows[0]["OrderId"]);
@@ -123,6 +123,70 @@ namespace ClassLibrary
                 //return false indicating there is a problem 
                 return false;
             }
+        }
+
+        public string Valid(string status, string orderDate, string totalAmount)
+        {
+            // create an instance of DateTime to compare with DateTemp
+            DateTime DateComp = DateTime.Now;
+            //create a string variable to store the error
+            String Error = "";
+            //create a temporary variable to store the date values
+            DateTime DateTemp;
+            Decimal TotalTemp;
+            TotalTemp = Convert.ToDecimal(TotalAmount);
+            if (TotalTemp < decimal.MinusOne)
+            {
+                //record the error
+                Error = Error + "The total amount may not be less than 0.00 : ";
+            }
+            if (TotalTemp > decimal.MaxValue)
+            {
+                //record the error
+                Error = Error + "The total amount may not be less than 0.00 : ";
+            }
+            //if the Status is blank
+            if (status.Length == 0)
+            {
+                //record the error
+                Error = Error + "The status may not be blank : ";
+            }
+            //if the status is greater than 50
+            if (status.Length > 50)
+            {
+                //record the error
+                Error = Error + "The status must be less than 50 : ";
+            }
+
+            try
+            {
+                //copy the orderDate value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(orderDate);
+                //check to see if the data is less than today's date
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                //check to see if the date is greater than today's date
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
+            }
+
+
+            catch
+            {
+                //record the error
+                Error = Error + "The date was not a valid date : ";
+            }
+
+
+        
+            //return the error message
+            return Error;
+
         }
     }
 }
