@@ -17,22 +17,36 @@ public partial class _1_DataEntry : System.Web.UI.Page
     {
         //create a new instance of clsOrders
         clsOrders AnOrder = new clsOrders();
-        //capture the Order ID
-        AnOrder.OrderId = Convert.ToInt32(txtOrderId.Text);
         //capture the Customer ID
-        AnOrder.CustomerId = Convert.ToInt32(txtCustomerId.Text);
+        string CustomerId = txtCustomerId.Text;
         //capture the order date
-        AnOrder.OrderDate = Convert.ToDateTime(DateTime.Now); 
+        string OrderDate = txtOrderDate.Text; 
         //capture the Total Amount
-        AnOrder.TotalAmount = Convert.ToDecimal(txtCustomerId.Text);
+        string TotalAmount = txtTotalAmount.Text;
         //capture the status of the order
-        AnOrder.Status = txtStatus.Text;
+        string Status = txtStatus.Text;
         //capture complete check box
-        AnOrder.Complete = chkComplete.Checked;
-        //store in the session object
-        Session["AnOrder"] = AnOrder;
-        //navigate to the view page
-        Response.Redirect("OrdersViewer.aspx");
+        string Complete = chkComplete.Text;
+        //variable to store any error messages
+        string Error = "";
+        //validate the data
+        Error = AnOrder.Valid(Status, OrderDate);
+        if (Error == "")
+        {
+            //capture the status of the order
+            AnOrder.Status = Status;
+            //capture the order date
+            AnOrder.OrderDate = Convert.ToDateTime(OrderDate);
+            //store in the session object
+            Session["AnOrder"] = AnOrder;
+            //navigate to the view page
+            Response.Redirect("OrdersViewer.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
+        }
     }
 
 
