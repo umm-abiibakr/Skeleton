@@ -8,11 +8,10 @@ namespace Testing4
     public class tstOrders
     {
         //create some test data to pass the method
+        string Status = "processing";
         string OrderDate = DateTime.Now.ToShortDateString();
-        string Status = "Processing";
-        string TotalAmount = Decimal.Zero.ToString();
+        
    
-
         [TestMethod]
         public void InstanceOk()
           
@@ -95,7 +94,7 @@ namespace Testing4
         { //create an instance of the class we want to create
             clsOrders AnOrder = new clsOrders();
             //create some test data to assign to the property
-            string TestData = "Processing";
+            string TestData = "processing";
             //assign the data to the property 
             AnOrder.Status = TestData;
             //test to see that the two values are the same
@@ -266,7 +265,7 @@ namespace Testing4
             //String variable to store any error message
             String Error = "";
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreEqual(Error, "");
 
@@ -282,7 +281,7 @@ namespace Testing4
             //create some test data to pass the method
             string Status = ""; //this triggers an error
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount) ;
+            Error = AnOrder.Valid(Status, OrderDate) ;
             //test to see if the result is correct
             Assert.AreNotEqual(Error, "");
 
@@ -296,9 +295,9 @@ namespace Testing4
             //String variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string Status = "c"; 
+            string Status = "p"; 
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreEqual(Error, "");
 
@@ -312,9 +311,9 @@ namespace Testing4
             //String variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string Status = "co";
+            string Status = "pr";
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreEqual(Error, "");
 
@@ -329,9 +328,9 @@ namespace Testing4
             //String variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string Status = "compppppppppppppppppppppppppppppppppppppppppppppp";
+            string Status = "processin";
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreEqual(Error, "");
 
@@ -346,9 +345,9 @@ namespace Testing4
             //String variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string Status = "comppppppppppppppppppppppppppppppppppppppppppppppp";
+            string Status = "processing";
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreEqual(Error, "");
 
@@ -362,9 +361,9 @@ namespace Testing4
             //String variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string Status = "compppppppppppppppppppppp";
+            string Status = "proce";
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreEqual(Error, "");
 
@@ -378,9 +377,9 @@ namespace Testing4
             //String variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string Status = "compppppppppppppppppppppppppppppppppppppppppppppppp";
+            string Status = "processingg";
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreNotEqual(Error, "");
 
@@ -394,9 +393,9 @@ namespace Testing4
             String Error = "";
             //create some test data to pass the method
             string Status = "";
-            Status = Status.PadRight(5000, 'a'); //this should fail
+            Status = Status.PadRight(500, 'p'); //this should fail
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreNotEqual(Error, "");
 
@@ -418,7 +417,7 @@ namespace Testing4
             //convert the date variable to a string variable
             string OrderDate = TestDate.ToString();
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreNotEqual(Error, "");
 
@@ -440,7 +439,7 @@ namespace Testing4
             //convert the date variable to a string variable
             string OrderDate = TestDate.ToString();
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreNotEqual(Error, "");
 
@@ -460,7 +459,7 @@ namespace Testing4
             //convert the date variable to a string variable
             string OrderDate = TestDate.ToString();
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -481,7 +480,7 @@ namespace Testing4
             //convert the date variable to a string variable
             string OrderDate = TestDate.ToString();
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -502,7 +501,7 @@ namespace Testing4
             //convert the date variable to a string variable
             string OrderDate = TestDate.ToString();
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreNotEqual(Error, "");
 
@@ -519,7 +518,7 @@ namespace Testing4
             //set the OrderDate to a non date value
             string OrderDate = "This is not a date!";
             //invoke the method 
-            Error = AnOrder.Valid(Status, OrderDate, TotalAmount);
+            Error = AnOrder.Valid(Status, OrderDate);
             //test to see if the result is correct
             Assert.AreNotEqual(Error, "");
         }

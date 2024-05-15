@@ -125,7 +125,7 @@ namespace ClassLibrary
             }
         }
 
-        public string Valid(string status, string orderDate, string totalAmount)
+        public string Valid(string status, string orderDate)
         {
             // create an instance of DateTime to compare with DateTemp
             DateTime DateComp = DateTime.Now;
@@ -133,30 +133,6 @@ namespace ClassLibrary
             String Error = "";
             //create a temporary variable to store the date values
             DateTime DateTemp;
-            Decimal TotalTemp;
-            TotalTemp = Convert.ToDecimal(TotalAmount);
-            if (TotalTemp < decimal.MinusOne)
-            {
-                //record the error
-                Error = Error + "The total amount may not be less than 0.00 : ";
-            }
-            if (TotalTemp > decimal.MaxValue)
-            {
-                //record the error
-                Error = Error + "The total amount may not be less than 0.00 : ";
-            }
-            //if the Status is blank
-            if (status.Length == 0)
-            {
-                //record the error
-                Error = Error + "The status may not be blank : ";
-            }
-            //if the status is greater than 50
-            if (status.Length > 50)
-            {
-                //record the error
-                Error = Error + "The status must be less than 50 : ";
-            }
 
             try
             {
@@ -175,15 +151,25 @@ namespace ClassLibrary
                 }
             }
 
-
             catch
             {
                 //record the error
                 Error = Error + "The date was not a valid date : ";
             }
 
+            //if the Status is blank
+            if (status.Length == 0)
+            {
+                //record the error
+                Error = Error + "The status may not be blank : ";
+            }
+            //if the status is greater than 50
+            if (status.Length > 10)
+            {
+                //record the error
+                Error = Error + "The status must be less than 10 : ";
+            }
 
-        
             //return the error message
             return Error;
 
