@@ -33,7 +33,7 @@ namespace Testing3
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
             //create some test data to assign to the property
-            Date TestData = "20/05/1965";
+            DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
             AnCustomer.DateOfBirth = TestData;
             //test to see that the two values are the same
@@ -45,7 +45,7 @@ namespace Testing3
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
             //create some test data to assign to the property
-            Varchar TestData = "USA";
+            string TestData = "USA";
             //assign the data to the property
             AnCustomer.Country = TestData;
             //test to see that the two values are the same
@@ -57,7 +57,7 @@ namespace Testing3
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
             //create some test data to assign to the property
-            Text TestData = "123, Main Street, New York";
+            string TestData = "123, Main Street, New York";
             //assign the data to the property
             AnCustomer.Address = TestData;
             //test to see that the two values are the same
@@ -69,7 +69,7 @@ namespace Testing3
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
             //create some test data to assign to the property
-            Varchar TestData = "johndoe@example.com";
+            string TestData = "johndoe@example.com";
             //assign the data to the property
             AnCustomer.Email = TestData;
             //test to see that the two values are the same
@@ -81,7 +81,7 @@ namespace Testing3
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
             //create some test data to assign to the property
-            Varchar TestData = "John Doe";
+            String TestData = "John Doe";
             //assign the data to the property
             AnCustomer.Name = TestData;
             //test to see that the two values are the same
@@ -93,7 +93,9 @@ namespace Testing3
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
             //create some test data to assign to the property
-            Int TestData = "1";
+
+            Int32 TestData = 1;
+
             //assign the data to the property
             AnCustomer.CustomerId = TestData;
             //test to see that the two values are the same
