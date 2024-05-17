@@ -14,8 +14,12 @@ public partial class _1Viewer : System.Web.UI.Page
         clsCustomer AnCustomer = new clsCustomer();
         //get the data from the session object
         AnCustomer = (clsCustomer)Session["AnCustomer"];
-        //display the house number for this entry
+        //display for entry
         Response.Write(AnCustomer.Name);
-
+        Response.Write(AnCustomer.DateOfBirth);
+        Response.Write(AnCustomer.Email);
+        Response.Write(AnCustomer.Subscription);
+        Response.Write(AnCustomer.Address);
+        Response.Write(AnCustomer.Country);
     }
 }

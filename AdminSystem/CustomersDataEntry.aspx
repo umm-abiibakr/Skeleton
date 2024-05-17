@@ -22,12 +22,24 @@
         <asp:TextBox ID="txtCountry" runat="server" height="22px" style="z-index: 1; left: 136px; top: 158px; position: absolute" width="128px"></asp:TextBox>
         <asp:Label ID="lblDateOfBirth" runat="server" height="19px" style="z-index: 1; left: 10px; top: 197px; position: absolute" Text="DateOfBirth" width="75px"></asp:Label>
         <asp:TextBox ID="txtDateOfBirth" runat="server" height="22px" style="z-index: 1; left: 136px; top: 193px; position: absolute; bottom: 337px" width="128px"></asp:TextBox>
-        <asp:Label ID="lblSubscription" runat="server" style="z-index: 1; left: 10px; top: 227px; position: absolute" Text="Subscription"></asp:Label>
-        <asp:TextBox ID="txtSubscription" runat="server" height="22px" OnTextChanged="txtSubscription_TextChanged" style="z-index: 1; left: 136px; top: 225px; position: absolute" width="128px"></asp:TextBox>
-        <asp:CheckBox ID="chkSubscription" runat="server" style="z-index: 1; left: 118px; top: 264px; position: absolute" Text="Subscription" />
+        <asp:CheckBox ID="chkSubscription" runat="server" style="z-index: 1; left: 116px; top: 244px; position: absolute" Text="Subscription" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 20px; top: 291px; position: absolute"></asp:Label>
-        <asp:Button ID="Button1" runat="server" height="27px" OnClick="Button1_Click" style="z-index: 1; left: 21px; top: 322px; position: absolute" Text="OK" width="60px" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 104px; top: 322px; position: absolute; width: 60px; height: 27px;" Text="Cancel" />
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:Button ID="btnOK" runat="server" OnClick="Button1_Click" Text="OK" />
+        </p>
     </form>
 </body>
 </html>
