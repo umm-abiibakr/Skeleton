@@ -19,11 +19,17 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
     }
 
-    protected void btnOK_Click(object sender, EventArgs e)
+    protected void txtSubscription_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+ 
+
+
+    protected void Button1_Click(object sender, EventArgs e)
     {
         
-        //navigate to the view page
-        Response.Redirect("CustomersViewer.aspx");
         //create a new instance of clsCustomer();
         clsCustomer AnCustomer = new clsCustomer();
         //Capture the customers name
@@ -40,18 +46,8 @@ public partial class _1_DataEntry : System.Web.UI.Page
         AnCustomer.Email = Convert.ToString(txtEmail.Text);
         //store the address in the section object
         Session["AnCustomer"] = AnCustomer;
-
-
-
-    }
-
-    protected void txtSubscription_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-
+        //navigate to the view page
+        Response.Redirect("CustomersViewer.aspx");
+    
     }
 }
