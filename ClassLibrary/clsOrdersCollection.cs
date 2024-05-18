@@ -52,35 +52,44 @@ namespace ClassLibrary
         }
 
         //constructor for the class
+        void PopulateArray (clsDataConnection DB)
+        {
+                //populates the array list based on the data table in the parameter DB
+                //variable for the index
+                Int32 Index = 0;
+                //variable to store the record count 
+                Int32 RecordCount;
+                //get the count of the records 
+                RecordCount = DB.Count;
+                //clear the private array list
+                mOrdersList = new List<clsOrders>();
+                //while there are records to process
+                while (Index < RecordCount)
+                {
+                    //create a blank order object
+                    clsOrders AnOrder = new clsOrders();
+                    //read in the fields for the current record
+                    AnOrder.Complete = Convert.ToBoolean(DB.DataTable.Rows[Index]["Complete"]);
+                    AnOrder.OrderId = Convert.ToInt32(DB.DataTable.Rows[Index]["OrderId"]);
+                    AnOrder.CustomerId = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerId"]);
+                    AnOrder.TotalAmount = Convert.ToDecimal(DB.DataTable.Rows[Index]["TotalAmount"]);
+                    AnOrder.OrderDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["OrderDate"]);
+                    AnOrder.Status = Convert.ToString(DB.DataTable.Rows[Index]["Status"]);
+                    //add the record to the private data member
+                    mOrdersList.Add(AnOrder);
+                    //point at the next record 
+                    Index++;
+                }
+            }
         public clsOrdersCollection()
         {
-            //variable for the index
-            Int32 Index = 0;
-            //variable to store the record count 
-            Int32 RecordCount = 0;
-            //object for the data connect
+            //object for the data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the stored procedure 
             DB.Execute("sproc_tblOrders_SelectAll");
-            //get the count of the records
-            RecordCount = DB.Count;
-            //while there are records to process
-            while (Index < RecordCount)
-            {
-                //create a blank order
-                clsOrders AnOrder = new clsOrders();
-                //read in the fields for the current record
-                AnOrder.Complete = Convert.ToBoolean(DB.DataTable.Rows[Index]["Complete"]);
-                AnOrder.OrderId = Convert.ToInt32(DB.DataTable.Rows[Index]["OrderId"]);
-                AnOrder.CustomerId = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerId"]);
-                AnOrder.TotalAmount = Convert.ToDecimal(DB.DataTable.Rows[Index]["TotalAmount"]);
-                AnOrder.OrderDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["OrderDate"]);
-                AnOrder.Status = Convert.ToString(DB.DataTable.Rows[Index]["Status"]);
-                //add the record to the private data member
-                mOrdersList.Add( AnOrder );
-                //point at the next record 
-                Index++;
-            }
+            //populate the array list with the data table
+            PopulateArray (DB);
+           
         }
 
         public int Add()
@@ -125,5 +134,19 @@ namespace ClassLibrary
             //execute the stored procedure
             DB.Execute("sproc_tblOrders_Delete");
         }
-    }
+
+        public void ReportByStatus(string Status)
+        {
+            //filters the records based on delivered, cancelled or processing order
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the Status parameter to the database
+            DB.AddParameter("@Status", Status);
+            //execute the stored procedure
+            DB.Execute("sproc_tblOrders_FilterByStatus");
+            //populate the array list with the data table
+            PopulateArray(DB);
+
+        }
+        }
 }
