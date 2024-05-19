@@ -6,32 +6,32 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="z-index: 1; left: 0px; top: 0px; position: absolute; height: 583px; width: 1798px; text-align: center; font-weight: 700">
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:Label ID="lblLogin" runat="server" Text="Orders Login Page"></asp:Label>
+        <asp:Label ID="lblLogin" runat="server" Text="Orders Login Page" Font-Size="XX-Large"></asp:Label>
         <p>
             &nbsp;</p>
         <p>
-            <asp:Label ID="lblUserName" runat="server" Text="UserName: "></asp:Label>
-            <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
+            <asp:Label ID="lblUserName" runat="server" Text="UserName: " Font-Size="XX-Large"></asp:Label>
+            <asp:TextBox ID="txtUserName" runat="server" Font-Size="XX-Large"></asp:TextBox>
         </p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblError" runat="server" ForeColor="#FF3300"></asp:Label>
+            <asp:Label ID="lblError" runat="server" ForeColor="#FF3300" Font-Size="XX-Large"></asp:Label>
         </p>
         <p>
-            <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
-            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+            <asp:Label ID="lblPassword" runat="server" Text="Password: " Font-Size="XX-Large"></asp:Label>
+            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Font-Size="XX-Large"></asp:TextBox>
         </p>
         <p>
             &nbsp;</p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" width="77px" />
+            <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" width="216px" Font-Size="XX-Large" style="z-index: 1; left: 750px; top: 393px; position: absolute; height: 53px;" />
 &nbsp;&nbsp;
-            <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" Font-Size="XX-Large" height="53px" OnClick="btnCancel_Click" style="z-index: 1; left: 984px; top: 393px; position: absolute; width: 216px" />
         </p>
         <p>
             &nbsp;</p>

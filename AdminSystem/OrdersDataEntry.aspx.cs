@@ -104,13 +104,6 @@ public partial class _1_DataEntry : System.Web.UI.Page
         }
     }
 
-
-
-    protected void btnCancel_Click(object sender, EventArgs e)
-    {
-
-    }
-
     protected void btnFind_Click(object sender, EventArgs e)
     {
         //create an instance of the order class
@@ -134,5 +127,17 @@ public partial class _1_DataEntry : System.Web.UI.Page
             chkComplete.Checked = AnOrder.Complete;
         }
 
+    }
+
+    protected void btnCancel_Click1(object sender, EventArgs e)
+    {
+        //redirect to the orders list page
+        Response.Redirect("OrdersList.aspx");
+    }
+
+    protected void btnReturnToMM_Click(object sender, EventArgs e)
+    {
+        //redirect to the main menu
+        Response.Redirect("TeamMainMenu.aspx");
     }
 }
