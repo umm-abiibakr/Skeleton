@@ -101,5 +101,65 @@ namespace Testing3
             //test to see that the two values are the same
             Assert.AreEqual(AnCustomer.CustomerId, TestData);
         }
-    }
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the new class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //create a Boolean variable to store the results of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 CustomerId = 1;
+            //invoke the method
+            Found = AnCustomer.Find(CustomerId);
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+
+        }
+        [TestMethod]
+        public void TestCustomerIdFound()
+        {
+            //create an instance of the new class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //create a Boolean variable to store the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerId = 1;
+            //invoke the method
+            Found = AnCustomer.Find(CustomerId);
+            //check the address id
+            if (AnCustomer.CustomerId != 1)
+            {
+                OK = false;
+            }
+
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestDateAddedFound()
+        {
+            //create an instance of the new class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //create a Boolean variable to store the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerId = 1;
+            //invoke the method
+            Found = AnCustomer.Find(CustomerId);
+            //check the dateAdded property
+            if (AnCustomer.DateAdded != Convert.ToDatetime("20/05/1965"))
+            {
+                OK = false;
+            }
+
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+
+        }
 }
