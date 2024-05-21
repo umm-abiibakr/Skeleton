@@ -185,6 +185,94 @@ namespace Testing3
             Assert.IsTrue(OK);
 
         }
-    }
+        [TestMethod]
+        public void TestEmailFound()
+        {
+            //create an instance of the new class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //create a Boolean variable to store the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerId = 1;
+            //invoke the method
+            Found = AnCustomer.Find(CustomerId);
+            //check the email property
+            if (AnCustomer.Email != "johndoe@example.com")
+            {
+                OK = false;
+            }
 
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+
+        }
+        [TestMethod]
+        public void TestAddressFound()
+        {
+            //create an instance of the new class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //create a Boolean variable to store the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerId = 1;
+            //invoke the method
+            Found = AnCustomer.Find(CustomerId);
+            //check the address property
+            if (AnCustomer.Address != "123, Main Street, New York")
+            {
+                OK = false;
+            }
+
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestCountryFound()
+        {
+            //create an instance of the new class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //create a Boolean variable to store the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerId = 1;
+            //invoke the method
+            Found = AnCustomer.Find(CustomerId);
+            //check the country property
+            if (AnCustomer.Country != "USA")
+            {
+                OK = false;
+            }
+
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestSubscriptionFound()
+        {
+            //create an instance of the new class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //create a Boolean variable to store the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerId = 1;
+            //invoke the method
+            Found = AnCustomer.Find(CustomerId);
+            //check the subscription property
+            if (AnCustomer.Subscription != true)
+            {
+                OK = false;
+            }
+
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+    }
 }
