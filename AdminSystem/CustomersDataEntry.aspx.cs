@@ -50,4 +50,14 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Response.Redirect("CustomersViewer.aspx");
     
     }
+
+    protected void txtEmail_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void txtName_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }
