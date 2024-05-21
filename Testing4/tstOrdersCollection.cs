@@ -163,6 +163,7 @@ namespace Testing4
             Int32 PrimaryKey = 0;
             //set its properties 
             TestItem.Complete = true;
+            TestItem.OrderId = 1;
             TestItem.CustomerId = 1;
             TestItem.TotalAmount = 1.00m;
             TestItem.OrderDate = DateTime.Now;

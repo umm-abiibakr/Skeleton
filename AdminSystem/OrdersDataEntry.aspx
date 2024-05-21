@@ -49,11 +49,11 @@
             <br />
             <br />
             <br />
-            &nbsp;<asp:Button ID="btnOK" runat="server" height="43px" OnClick="btnOK_Click" Text="OK" width="142px" Font-Bold="False" Font-Size="X-Large" style="z-index: 1; left: 570px; top: 463px; position: absolute" />
+            &nbsp;<asp:Button ID="btnOK" runat="server" height="43px" OnClick="btnOK_Click" Text="OK" width="142px" Font-Bold="False" Font-Size="X-Large" style="z-index: 1; left: 570px; top: 463px; position: absolute; right: 1086px;" />
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnCancel" runat="server" Text="Cancel" Font-Bold="False" Font-Size="X-Large" OnClick="btnCancel_Click1" style="z-index: 1; left: 773px; top: 463px; position: absolute; width: 142px; right: 883px; height: 43px" />
             <asp:Button ID="btnReturnToMM" runat="server" Font-Bold="False" Font-Size="X-Large" OnClick="btnReturnToMM_Click" style="z-index: 1; left: 973px; top: 463px; position: absolute; height: 43px" Text="Return to Main Menu" />
-            <asp:Label ID="lblError" runat="server" height="26px" width="60px" Font-Bold="False" Font-Size="X-Large" style="z-index: 1; left: 611px; top: 391px; position: absolute; bottom: 317px"></asp:Label>
+            <asp:Label ID="lblError" runat="server" height="26px" width="60px" Font-Bold="False" Font-Size="X-Large" style="z-index: 1; left: 583px; top: 553px; position: absolute; bottom: 155px" ForeColor="#FF3300"></asp:Label>
+            <asp:Button ID="btnCancel" runat="server" Font-Size="X-Large" height="43px" OnClick="btnCancel_Click" style="z-index: 1; top: 463px; position: absolute; left: 753px" Text="Cancel" width="142px" />
         </div>
     </form>
 </body>
