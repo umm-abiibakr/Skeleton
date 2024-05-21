@@ -140,7 +140,7 @@ namespace Testing3
 
         }
         [TestMethod]
-        public void TestDateAddedFound()
+        public void TestDateOfBirthFound()
         {
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
@@ -153,7 +153,7 @@ namespace Testing3
             //invoke the method
             Found = AnCustomer.Find(CustomerId);
             //check the dateAdded property
-            if (AnCustomer.DateAdded != Convert.ToDatetime("20/05/1965"))
+            if (AnCustomer.DateOfBirth != Convert.ToDateTime("20/05/1965"))
             {
                 OK = false;
             }
@@ -162,4 +162,29 @@ namespace Testing3
             Assert.IsTrue(OK);
 
         }
+        [TestMethod]
+        public void TestNameFound()
+        {
+            //create an instance of the new class we want to create
+            clsCustomer AnCustomer = new clsCustomer();
+            //create a Boolean variable to store the search
+            Boolean Found = false;
+            //create a Boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerId = 1;
+            //invoke the method
+            Found = AnCustomer.Find(CustomerId);
+            //check the name property
+            if (AnCustomer.Name != "John Doe")
+            {
+                OK = false;
+            }
+
+            //test to see if the result is true
+            Assert.IsTrue(OK);
+
+        }
+    }
+
 }
