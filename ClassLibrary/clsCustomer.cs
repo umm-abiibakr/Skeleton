@@ -24,19 +24,19 @@ namespace ClassLibrary
         }
 
         //private data member for the data added property
-        private DateTime mDateOfBirth;
+        private DateTime mDateAdded;
         //dataAdded public property
-        public DateTime DateOfBirth
+        public DateTime DateAdded
         {
             get
             {
                 //this line of code sends data out of property
-                return mDateOfBirth;
+                return mDateAdded;
             }
             set
             {
                 //this line of code allows data into the property
-                mDateOfBirth = value;
+                mDateAdded = value;
             }
         }
 
@@ -130,8 +130,6 @@ namespace ClassLibrary
 
 
 
-        public DateTime DateOfbirth;
-
         public bool Find(int CustomerId)
         {
             //create an instance of the data connection
@@ -150,7 +148,7 @@ namespace ClassLibrary
                 mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
                 mCountry = Convert.ToString(DB.DataTable.Rows[0]["Country"]);
                 mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
-                mDateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfbirth"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
                 mSubscription = Convert.ToBoolean(DB.DataTable.Rows[0]["Subscription"]);
                 //return that everything worked Ok
                 return true;

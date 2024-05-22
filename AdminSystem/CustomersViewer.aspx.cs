@@ -16,7 +16,7 @@ public partial class _1Viewer : System.Web.UI.Page
         AnCustomer = (clsCustomer)Session["AnCustomer"];
         //display for entry
         Response.Write(AnCustomer.Name);
-        Response.Write(AnCustomer.DateOfBirth);
+        Response.Write(AnCustomer.DateAdded);
         Response.Write(AnCustomer.Email);
         Response.Write(AnCustomer.Subscription);
         Response.Write(AnCustomer.Address);
