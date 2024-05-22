@@ -35,7 +35,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         //Capture the customers name
         AnCustomer.Name = txtName.Text;
         //capture the Date Of Birth
-        AnCustomer.DateOfBirth = Convert.ToDateTime(DateTime.Now);
+        AnCustomer.DateAdded = Convert.ToDateTime(DateTime.Now);
         //capture the subscription
         AnCustomer.Subscription = chkSubscription.Checked;
         //store the address
@@ -86,7 +86,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             txtEmail.Text = AnCustomer.Email;
             txtAddress.Text = AnCustomer.Address;
             txtCountry.Text = AnCustomer.Country;
-            txtDateOfBirth.Text = AnCustomer.DateOfBirth.ToString();
+            txtDateOfBirth.Text = AnCustomer.DateAdded.ToString();
             chkSubscription.Checked = AnCustomer.Subscription;
 
 

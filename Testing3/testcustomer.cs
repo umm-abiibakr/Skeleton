@@ -28,16 +28,16 @@ namespace Testing3
             Assert.AreEqual(AnCustomer.Subscription, TestData);
         }
         [TestMethod]
-        public void DateOfBirthOK()
+        public void DateAddedOK()
         {
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
             //create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
-            AnCustomer.DateOfBirth = TestData;
+            AnCustomer.DateAdded = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(AnCustomer.DateOfBirth, TestData);
+            Assert.AreEqual(AnCustomer.DateAdded, TestData);
         }
         [TestMethod]
         public void CountryOK()
@@ -140,7 +140,7 @@ namespace Testing3
 
         }
         [TestMethod]
-        public void TestDateOfBirthFound()
+        public void TestDateAddedFound()
         {
             //create an instance of the new class we want to create
             clsCustomer AnCustomer = new clsCustomer();
@@ -153,7 +153,7 @@ namespace Testing3
             //invoke the method
             Found = AnCustomer.Find(CustomerId);
             //check the dateAdded property
-            if (AnCustomer.DateOfBirth != Convert.ToDateTime("03/04/1986"))
+            if (AnCustomer.DateAdded != Convert.ToDateTime("03/04/2019"))
             {
                 OK = false;
             }
