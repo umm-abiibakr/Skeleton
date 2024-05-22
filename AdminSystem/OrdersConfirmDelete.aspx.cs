@@ -20,14 +20,14 @@ public partial class _1_ConfirmDelete : System.Web.UI.Page
         //create a new instance of the orders collection class
         clsOrdersCollection Orders = new clsOrdersCollection();
         //find the record to delete 
+        Orders.ThisOrder.Find(OrderId);
+        //delete the record
         Orders.Delete();
         //redirect back to the main page
         Response.Redirect("OrdersList.aspx");
     }
     protected void btnNo_Click(object sender, EventArgs e)
     {
-        //create a new instance of the orders collection class
-        clsOrdersCollection Orders = new clsOrdersCollection();
         //redirect back to the main page
         Response.Redirect("OrdersList.aspx");
     }
