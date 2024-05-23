@@ -20,7 +20,7 @@
         <asp:Label ID="lblCountry" runat="server" style="z-index: 1; left: 10px; top: 163px; position: absolute; height: 19px; width: 75px" Text="Country"></asp:Label>
         <asp:TextBox ID="txtCountry" runat="server" height="22px" style="z-index: 1; left: 136px; top: 158px; position: absolute" width="128px"></asp:TextBox>
         <asp:Label ID="lblDateAdded" runat="server" height="19px" style="z-index: 1; left: 10px; top: 197px; position: absolute" Text="DateAdded" width="75px"></asp:Label>
-        <asp:TextBox ID="txtDateOfBirth" runat="server" height="22px" style="z-index: 1; left: 136px; top: 193px; position: absolute; bottom: 337px" width="128px"></asp:TextBox>
+        <asp:TextBox ID="txtDateAdded" runat="server" height="22px" style="z-index: 1; left: 136px; top: 193px; position: absolute; bottom: 337px" width="128px"></asp:TextBox>
         <asp:CheckBox ID="chkSubscription" runat="server" style="z-index: 1; left: 116px; top: 244px; position: absolute" Text="Subscription" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 18px; top: 289px; position: absolute"></asp:Label>
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 119px; top: 358px; position: absolute; width: 60px; height: 25px;" Text="Cancel" OnClick="btnCancel_Click1" />
