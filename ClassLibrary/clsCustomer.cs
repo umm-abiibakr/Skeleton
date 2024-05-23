@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Diagnostics.SymbolStore;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ClassLibrary
 {
     public class clsCustomer
     {
+      
         //private data member for the address id property
         private Int32 mCustomerId;
         //CustomerId public property
@@ -160,6 +162,100 @@ namespace ClassLibrary
                 return false;
 
             }
+
+          
+
+        }
+
+        public string Valid(string name, string email, string address, string country, string dateAdded)
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //create a temporary variable to store the date values
+            DateTime DateTemp;
+            //if the Name is blank
+            if(name.Length == 0)
+            {
+                //record the error
+                Error = Error + "The name may not be blank : ";
+            }
+            //if the name is greater than 50 characters
+            if (name.Length > 50)
+            {
+                //record the error
+                Error = Error + "The name must be less than 50 characters : ";
+            }
+
+            //if the Email is blank
+            if (email.Length == 0)
+            {
+                //record the error
+                Error = Error + "The email may not be blank : ";
+            }
+            //if the name is greater than 50 characters
+            if (email.Length > 50)
+            {
+                //record the error
+                Error = Error + "The email must be less than 50 characters : ";
+            }
+
+            //if the Address is blank
+            if (address.Length == 0)
+            {
+                //record the error
+                Error = Error + "The address may not be blank : ";
+            }
+            //if the address is greater than 50 characters
+            if (address.Length > 50)
+            {
+                //record the error
+                Error = Error + "The address must be less than 50 characters : ";
+            }
+
+            //if the Country is blank
+            if (country.Length == 0)
+            {
+                //record the error
+                Error = Error + "The country may not be blank : ";
+            }
+            //if the country is greater than 50 characters
+            if (country.Length > 50)
+            {
+                //record the error
+                Error = Error + "The country must be less than 50 characters : ";
+            }
+
+            //create an instance of DateTime to compare with DateTemp
+            //in the if statements
+            DateTime DateComp = DateTime.Now.Date;
+
+            try
+            {
+
+                //copy the dateAdded value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateAdded);
+
+                //check to see if the date is less than today's date
+                if (DateTemp < DateComp) //compare dateAdded with Date
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                //check to see if the date is gretaer than today's date
+                if (DateTemp > DateComp)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
+
+            }
+            catch
+            {
+                //record ther error
+                Error = Error + "The date was not a valid date : ";
+            }
+            //return any eror messages
+            return Error;
         }
     }
 }
