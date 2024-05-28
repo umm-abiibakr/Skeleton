@@ -35,38 +35,36 @@ namespace Testing1
 
 
 
+
             [TestMethod]
+            public void DescriptionOk()
 
-            public void DescriptionOK()
-            {
-                //create an instance of the class we want to test
-                clsAircrafts AnAircraft = new clsAircrafts();
-                string TestData = "we are testing";
+            //create an instance of the class we want to test 
+            clsAircrafts AnAircraft = new clsAircrafts();
+            string TestData = "Hello Aircraft";
+            //assign the data to the property
+            AnAircraft.Description = TestData;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAircraft.Description, TestData);
+
+
+
+
+            [TestMethod]
+            public void PriceOK()
+
+            { //create an instance of the class we want to create
+                clsOrders AnAircraft = new clsAircrafts();
+                //create some test data to assign to the property
+                Decimal TestData = 11.80m;
                 //assign the data to the property 
-                AnAircraft.Description = TestData;
-                //test to see that the two values are the same 
-                Assert.AreEqual(AnAircraft.Description, TestData);
+                AnAircraft.Price = TestData;
+                //test to see that the two values are the same
+                Assert.AreEqual(AnAircraft.Price, TestData);
+            }
 
 
-
-
-                [TestMethod]
-
-                public void PriceOK()
-                {
-                    //Create an instance of the class we want to test
-                    clsAircrafts AnAircraft = new clsAircrafts();
-                    //Create some test data to assign to the property
-                    decimal TestData = 100.5m;
-                    //Assign the data to the property
-                    AnAircraft.Price = TestData;
-                    //Test to see that the two values are the same
-                    Assert.AreEqual(AnAircraft.Price, TestData);
-
-                }
-
-
-                [TestMethod]
+            [TestMethod]
                 public void ImageUrlOK()
                 {
 

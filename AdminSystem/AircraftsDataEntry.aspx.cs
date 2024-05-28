@@ -7,8 +7,27 @@ using System.Web.UI.WebControls;
 
 public partial class _1_DataEntry : System.Web.UI.Page
 {
+    public object AircraftsViewer { get; private set; }
+
     protected void Page_Load(object sender, EventArgs e)
     {
+
+    }
+
+    protected void TextBox1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void chkAvailability_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnOK_Click(object sender, EventArgs e)
+    {
+        //navigate to the view page
+        Response.Redirect("AircraftsViewer.aspx");
 
     }
 }
