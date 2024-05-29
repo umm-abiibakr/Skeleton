@@ -9,10 +9,20 @@ using ClassLibrary;
 
 public partial class _1_DataEntry : System.Web.UI.Page
 {
-    
 
+    Int32 CustomerId;
     protected void Page_Load(object sender, EventArgs e)
-    {
+    {//get the number of the address to be processed
+        CustomerId = Convert.ToInt32(Session["CustomerId"]);
+        if (IsPostBack == false)
+        {
+            //if this is teh not a new record
+            if (CustomerId != -1)
+            {
+                //display the current data for the record
+                DisplayCustomer();
+            }
+        }
 
     }
 
@@ -21,7 +31,22 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
     }
 
- 
+     void DisplayCustomer()
+    {
+        //create a instance of the customer class
+        clsCustomerCollection CustomerBook = new clsCustomerCollection();
+        //find the record to update
+        CustomerBook.ThisCustomer.Find(CustomerId);
+        //display the data for the record
+        txtCustomerId.Text = CustomerBook.ThisCustomer.CustomerId.ToString();
+        txtName.Text = CustomerBook.ThisCustomer.Name.ToString();
+        txtEmail.Text = CustomerBook.ThisCustomer.Email.ToString();
+        txtAddress.Text = CustomerBook.ThisCustomer.Address.ToString();
+        txtCountry.Text = CustomerBook.ThisCustomer.Country.ToString();
+        txtDateAdded.Text = CustomerBook.ThisCustomer.DateAdded.ToString();
+        chkSubscription.Checked = CustomerBook.ThisCustomer.Subscription;
+
+    }
 
 
     protected void Button1_Click(object sender, EventArgs e)
@@ -29,6 +54,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         
         //create a new instance of clsCustomer();
         clsCustomer AnCustomer = new clsCustomer();
+        
         //Capture the customers name
         string Name = txtName.Text;
         //capture the DateAdded
@@ -47,20 +73,45 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Error = AnCustomer.Valid(Name, Email, Address, Country, DateAdded);
         if (Error == "")
         {
+            //capture the customer id
+            AnCustomer.CustomerId = CustomerId; 
             //Capture the customers name
             AnCustomer.Name = Name;
-            //capture the DateAdded
-            AnCustomer.DateAdded = Convert.ToDateTime(DateAdded);
+            //capture the email
+            AnCustomer.Email = Email;
             //store the address
             AnCustomer.Address = Address;
             //store the country
             AnCustomer.Country = Country;
-            //capture the email
-            AnCustomer.Email = Email;
-            //store the address in the section object
-            Session["AnCustomer"] = AnCustomer;
-            //navigate to the view page
-            Response.Redirect("CustomersViewer.aspx");
+            //capture the DateAdded
+            AnCustomer.DateAdded = Convert.ToDateTime(DateAdded);
+            //capture subscription
+            AnCustomer.Subscription = chkSubscription.Checked;
+            //create a new instance of the customer collection
+            clsCustomerCollection CustomerList = new clsCustomerCollection();
+            
+            //if this is a new record i.e. CustomerId = -1 then add the data
+            if (CustomerId == -1)
+            {
+                //set teh This Customer property
+                CustomerList.ThisCustomer = AnCustomer;
+                //add the new record
+                CustomerList.Add();
+            }
+            //otherwise it must be an update
+            else
+            {
+                //find the record to update
+                CustomerList.ThisCustomer.Find(CustomerId);
+                //set the ThisCustomer property
+                CustomerList.ThisCustomer = AnCustomer;
+                //update the record
+                CustomerList.Update();
+
+            }
+            
+            //redirect back to list page
+            Response.Redirect("CustomersList.aspx");
         }
         else
         {
@@ -118,4 +169,6 @@ public partial class _1_DataEntry : System.Web.UI.Page
     {
 
     }
+
+
 }
