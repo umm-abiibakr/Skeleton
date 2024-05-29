@@ -22,8 +22,11 @@
             <asp:Button ID="btnDelete" runat="server" height="27px" OnClick="btnDelete_Click" Text="Delete" width="51px" />
         </p>
         <p>
-            <asp:Label ID="lblError" runat="server" Text="[lblError]"></asp:Label>
+            <asp:Label ID="lblError" runat="server" Text="[lblError]"></asp:Label><asp:Label runat="server" Text="Label"></asp:Label>
         </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
     </form>
 </body>
 </html>

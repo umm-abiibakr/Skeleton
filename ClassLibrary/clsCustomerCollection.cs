@@ -12,6 +12,20 @@ namespace ClassLibrary
         //private member data for thisCustomer
         clsCustomer mThisCustomer = new clsCustomer();
 
+
+
+        public clsCustomerCollection()
+        {
+
+            //onject for the data conncet
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure
+            DB.Execute("sproc_tblCustomer_SelectAll");
+            //populate the array list with the data table
+            PopulateArray(DB);
+
+        }
+
         //public property for the Customer list
         public List<clsCustomer> CustomerList
         {
@@ -75,9 +89,17 @@ namespace ClassLibrary
             DB.Execute("sproc_tblCustomer_Update");
         }
 
-        public void ReportByName(string v)
+        public void ReportByName(string Name)
         {
             //filters the records based on full or partial name
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the name parameter to the database
+            DB.AddParameter("@Name", Name);
+            //execute the stored procedure
+            DB.Execute("sproc_tblCustomer_FilterByName");
+            //populate the array list with the data table
+            PopulateArray(DB);
         }
 
         public void Delete()
@@ -102,45 +124,40 @@ namespace ClassLibrary
         }
 
 
-        public clsCustomerCollection()
+
+
+
+        void PopulateArray(clsDataConnection DB)
         {
-            //variable tfor the index
+            //populates teh array list based on the data table in the parameter DB
+            //variable for the index
             Int32 Index = 0;
-            //variable to store the record count
-            Int32 RecordCount = 0;
-            //onject for the data conncet
-            clsDataConnection DB = new clsDataConnection();
-            //execute the stored procedure
-            DB.Execute("sproc_tblCustomer_SelectAll");
+            //variable to store the record count 
+            Int32 RecordCount;
             //get the count of records
             RecordCount = DB.Count;
+            //clear the private arary list
+            mCustomerList = new List<clsCustomer>();
             //while there are records to process
             while (Index < RecordCount)
             {
-
-                //create a blank customer
+                //create a blank addresss object 
                 clsCustomer AnCustomer = new clsCustomer();
-                //read in the fields for the current record
+                //read in the fields from thecurrent record
                 AnCustomer.Subscription = Convert.ToBoolean(DB.DataTable.Rows[Index]["Subscription"]);
                 AnCustomer.CustomerId = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerId"]);
+                AnCustomer.DateAdded = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateAdded"]);
                 AnCustomer.Name = Convert.ToString(DB.DataTable.Rows[Index]["Name"]);
                 AnCustomer.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
                 AnCustomer.Address = Convert.ToString(DB.DataTable.Rows[Index]["Address"]);
                 AnCustomer.Country = Convert.ToString(DB.DataTable.Rows[Index]["Country"]);
-                AnCustomer.DateAdded = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateAdded"]);
-                //add the record to the private data member
+                //add the record to the private data ,member
                 mCustomerList.Add(AnCustomer);
                 //point at the next record
                 Index++;
-
             }
-           
-
         }
-
-
-
-
+    
 
     }
 }

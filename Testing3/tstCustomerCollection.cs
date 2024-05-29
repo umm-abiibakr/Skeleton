@@ -212,7 +212,44 @@ namespace Testing3
             Assert.AreEqual(AllCustomers.Count, FilteredCustomers.Count);
 
         }
-
+        [TestMethod]
+        public void ReportByNameNoneFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //apply a blank string (should return all records
+            FilteredCustomers.ReportByName("xxxxx");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredCustomers.Count);
+        }
+        [TestMethod]
+        public void ReportByNameTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //variable to store the outcome
+            Boolean OK = true;
+            //apply a name taht doesnt exist
+            FilteredCustomers.ReportByName("Some One");
+            //check that the correct number of records are found
+            if (FilteredCustomers.Count == 2)
+            {
+                if (FilteredCustomers.CustomerList[0].CustomerId != 52)
+                {
+                    OK = false;
+                }
+                if (FilteredCustomers.CustomerList[1].CustomerId != 53)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
     }
 }
 
