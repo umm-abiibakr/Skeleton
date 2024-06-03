@@ -171,4 +171,10 @@ public partial class _1_DataEntry : System.Web.UI.Page
     }
 
 
+
+    protected void btnReturnToMainMenu_Click(object sender, EventArgs e)
+    {
+        //redircet to the main page
+        Response.Redirect("TeamMainMenu.aspx");
+    }
 }
