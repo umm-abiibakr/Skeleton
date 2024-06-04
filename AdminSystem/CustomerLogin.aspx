@@ -14,12 +14,12 @@
         <p>
             <asp:Label ID="lblUserName" runat="server" style="z-index: 1; left: 65px; top: 112px; position: absolute" Text="UserName"></asp:Label>
             <asp:TextBox ID="txtUserName" runat="server" style="z-index: 1; left: 150px; top: 108px; position: absolute"></asp:TextBox>
-            <asp:Label ID="lblError" runat="server" ForeColor="#FF3300" style="z-index: 1; left: 356px; top: 165px; position: absolute" Text="[lblError]"></asp:Label>
+            <asp:Label ID="lblError" runat="server" ForeColor="#FF3300" style="z-index: 1; left: 356px; top: 165px; position: absolute"></asp:Label>
         </p>
         <asp:Label ID="lblPassword" runat="server" style="z-index: 1; left: 67px; top: 154px; position: absolute" Text="Password"></asp:Label>
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 151px; top: 153px; position: absolute" TextMode="Password"></asp:TextBox>
         <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" style="z-index: 1; left: 150px; top: 219px; position: absolute; height: 26px; width: 60px" Text="Login" />
-        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 231px; top: 219px; position: absolute" Text="Cancel" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 231px; top: 219px; position: absolute; height: 26px; width: 60px" Text="Cancel" />
     </form>
 </body>
 </html>
