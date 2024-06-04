@@ -26,6 +26,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
     }
 
+
     protected void txtSubscription_TextChanged(object sender, EventArgs e)
     {
 
@@ -49,78 +50,6 @@ public partial class _1_DataEntry : System.Web.UI.Page
     }
 
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        
-        //create a new instance of clsCustomer();
-        clsCustomer AnCustomer = new clsCustomer();
-        
-        //Capture the customers name
-        string Name = txtName.Text;
-        //capture the DateAdded
-        string DateAdded = txtDateAdded.Text;
-        //capture the subscription
-        string Subscription = chkSubscription.Text;
-        //store the address
-        string Address = txtAddress.Text;
-        //store the country
-        string Country = txtCountry.Text;
-        //capture the email
-        string Email = txtEmail.Text;
-        //variable to store any error messgaes
-        string Error = "";
-        //validate the data
-        Error = AnCustomer.Valid(Name, Email, Address, Country, DateAdded);
-        if (Error == "")
-        {
-            //capture the customer id
-            AnCustomer.CustomerId = CustomerId; 
-            //Capture the customers name
-            AnCustomer.Name = Name;
-            //capture the email
-            AnCustomer.Email = Email;
-            //store the address
-            AnCustomer.Address = Address;
-            //store the country
-            AnCustomer.Country = Country;
-            //capture the DateAdded
-            AnCustomer.DateAdded = Convert.ToDateTime(DateAdded);
-            //capture subscription
-            AnCustomer.Subscription = chkSubscription.Checked;
-            //create a new instance of the customer collection
-            clsCustomerCollection CustomerList = new clsCustomerCollection();
-            
-            //if this is a new record i.e. CustomerId = -1 then add the data
-            if (CustomerId == -1)
-            {
-                //set teh This Customer property
-                CustomerList.ThisCustomer = AnCustomer;
-                //add the new record
-                CustomerList.Add();
-            }
-            //otherwise it must be an update
-            else
-            {
-                //find the record to update
-                CustomerList.ThisCustomer.Find(CustomerId);
-                //set the ThisCustomer property
-                CustomerList.ThisCustomer = AnCustomer;
-                //update the record
-                CustomerList.Update();
-
-            }
-            
-            //redirect back to list page
-            Response.Redirect("CustomersList.aspx");
-        }
-        else
-        {
-            //display tehr error message
-            lblError.Text = Error;
-
-        }
-    
-    }
 
     protected void txtEmail_TextChanged(object sender, EventArgs e)
     {
@@ -164,9 +93,84 @@ public partial class _1_DataEntry : System.Web.UI.Page
         }
 
     }
+    protected void btnOK_Click(object sender, EventArgs e)
+    {
+
+
+        //create a new instance of clsCustomer();
+        clsCustomer AnCustomer = new clsCustomer();
+
+        //Capture the customers name
+        string Name = txtName.Text;
+        //capture the DateAdded
+        string DateAdded = txtDateAdded.Text;
+        //capture the subscription
+        string Subscription = chkSubscription.Text;
+        //store the address
+        string Address = txtAddress.Text;
+        //store the country
+        string Country = txtCountry.Text;
+        //capture the email
+        string Email = txtEmail.Text;
+        //variable to store any error messgaes
+        string Error = "";
+        //validate the data
+        Error = AnCustomer.Valid(Name, Email, Address, Country, DateAdded);
+        if (Error == "")
+        {
+            //capture the customer id
+            AnCustomer.CustomerId = CustomerId;
+            //Capture the customers name
+            AnCustomer.Name = Name;
+            //capture the email
+            AnCustomer.Email = Email;
+            //store the address
+            AnCustomer.Address = Address;
+            //store the country
+            AnCustomer.Country = Country;
+            //capture the DateAdded
+            AnCustomer.DateAdded = Convert.ToDateTime(DateAdded);
+            //capture subscription
+            AnCustomer.Subscription = chkSubscription.Checked;
+            //create a new instance of the customer collection
+            clsCustomerCollection CustomerList = new clsCustomerCollection();
+
+            //if this is a new record i.e. CustomerId = -1 then add the data
+            if (CustomerId == -1)
+            {
+                //set teh This Customer property
+                CustomerList.ThisCustomer = AnCustomer;
+                //add the new record
+                CustomerList.Add();
+            }
+            //otherwise it must be an update
+            else
+            {
+                //find the record to update
+                CustomerList.ThisCustomer.Find(CustomerId);
+                //set the ThisCustomer property
+                CustomerList.ThisCustomer = AnCustomer;
+                //update the record
+                CustomerList.Update();
+
+            }
+
+            //redirect back to list page
+            Response.Redirect("CustomersList.aspx");
+        }
+        else
+        {
+            //display tehr error message
+            lblError.Text = Error;
+
+        }
+    }
 
     protected void btnCancel_Click1(object sender, EventArgs e)
     {
+
+        //redircet to the main page
+        Response.Redirect("CustomersList.aspx");
 
     }
 
@@ -177,4 +181,6 @@ public partial class _1_DataEntry : System.Web.UI.Page
         //redircet to the main page
         Response.Redirect("TeamMainMenu.aspx");
     }
+
+    
 }

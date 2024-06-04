@@ -22,7 +22,7 @@ public partial class TeamMainMenu : System.Web.UI.Page
     protected void btnCustomers_Click(object sender, EventArgs e)
     {
         //redirect the user to the customers login page
-        Response.Redirect("CustomersLogin.aspx");
+        Response.Redirect("CustomerLogin.aspx");
     }
 
     protected void btnManufacturers_Click(object sender, EventArgs e)
