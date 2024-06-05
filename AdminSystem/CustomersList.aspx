@@ -12,7 +12,7 @@
         </div>
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 40px; top: 239px; position: absolute" Text="Add" height="26px" width="55px" />
         <asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" style="z-index: 1; left: 126px; top: 239px; position: absolute" Text="Edit" height="26px" width="55px" />
-        <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: 218px; top: 239px; position: absolute" Text="Delete" height="26px" width="55px"  />
+        <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: 218px; top: 239px; position: absolute" Text="Delete" height="26px" width="55px" OnClick="btnDelete_Click"  />
         <br />
         <br />
         <br />
