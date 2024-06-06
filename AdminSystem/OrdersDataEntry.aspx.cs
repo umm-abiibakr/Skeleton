@@ -84,7 +84,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             //add the new record
             OrdersList.Add();
             }
-            //otherwise it must be an pdate
+            //otherwise it must be an update
             else
             {
                 //find the record to update
