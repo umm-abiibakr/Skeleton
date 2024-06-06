@@ -21,7 +21,7 @@ namespace Testing3
             //create an instance of the class we want to create
             clsCustomerUser AnUser = new clsCustomerUser();
             //create some test data to assign to the property
-            Int32 TestData = 1;
+            Int32 TestData = 2;
             //assign the data to the property
             AnUser.UserID = TestData;
             //test to see that the two values are the same

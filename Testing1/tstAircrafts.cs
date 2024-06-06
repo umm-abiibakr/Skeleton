@@ -15,7 +15,7 @@ namespace Testing1
             //test to see that it exists
             Assert.IsNotNull(AnAircraft);
 
-
+        }
             [TestMethod]
 
             public void AircraftIdOk()
@@ -49,24 +49,25 @@ namespace Testing1
             }
 
 
+        [TestMethod]
+        public void DescriptionOK()
+        {
+            // Create an instance of the class we want to test
+            clsAircrafts AnAircraft = new clsAircrafts();
+
+            // Create some test data to assign to the property
+            string TestData = "This is a test description.";
+
+            // Assign the data to the property
+            AnAircraft.Description = TestData;
+
+            // Test to see that the two values are the same
+            Assert.AreEqual(AnAircraft.Description, TestData);
+
+        }
+
             [TestMethod]
-            public void DescriptionOK()
-            {
-                // Create an instance of the class we want to test
-                clsAircrafts AnAircraft = new clsAircrafts();
 
-                // Create some test data to assign to the property
-                string TestData = "This is a test description.";
-
-                // Assign the data to the property
-                AnAircraft.Description = TestData;
-
-                // Test to see that the two values are the same
-                Assert.AreEqual(AnAircraft.Description, TestData);
-
-
-
-                [TestMethod]
             public void ImageUrlOK()
             {
                 // Create an instance of the class we want to test
@@ -79,8 +80,10 @@ namespace Testing1
                 // Test to see that the two values are the same
                 Assert.AreEqual(AnAircraft.ImageUrl, TestData);
 
+            }
 
             [TestMethod]
+
             public void QuantityOK()
             {
 
@@ -125,7 +128,7 @@ namespace Testing1
 
 
             [TestMethod]
-                    public void AircraftNameOK()
+            public void AircraftNameOK()
             {
 
                 // Create an instance of the class we want to test
@@ -143,9 +146,5 @@ namespace Testing1
                 }
 
             }
-            }
-        }
-    }
-}
-
+      
 
