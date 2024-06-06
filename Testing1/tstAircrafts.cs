@@ -2,12 +2,23 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Reflection;
 
 namespace Testing1
 {
     [TestClass]
     public class tstAircrafts
     {
+        //good test data
+        //create some test data to pass the method
+        string AircraftName = "Boeng 123";
+        string ImageUrl = "exampleaircraft.com";
+        string Description = "Test Description";
+        string ManfacturedDated = DateTime.Now.ToShortDateString();
+
+        public object ManufacturedDated { get; private set; }
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -233,3 +244,5 @@ namespace Testing1
                 OK = false;
             }
 
+    }
+}
