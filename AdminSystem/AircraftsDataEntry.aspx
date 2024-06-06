@@ -47,8 +47,6 @@
     style="z-index: 1; left: 25px; top: 650px; position: absolute; height: 44px; width: 76px" 
     Text="OK" />
 
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 10px; top: 338px; position: absolute" Text="Button" />
-
     </form>
 </body>
 </html>
