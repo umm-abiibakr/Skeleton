@@ -1,6 +1,7 @@
 ﻿using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace Testing1
 {
@@ -14,7 +15,7 @@ namespace Testing1
             clsAircrafts AnAircraft = new clsAircrafts();
             //test to see that it exists
             Assert.IsNotNull(AnAircraft);
-
+        }
 
         [TestMethod]
 
@@ -62,10 +63,10 @@ namespace Testing1
 
             // Test to see that the two values are the same
             Assert.AreEqual(AnAircraft.Description, TestData);
+        }
 
 
-
-            [TestMethod]
+        [TestMethod]
         public void ImageUrlOK()
         {
             // Create an instance of the class we want to test
@@ -77,7 +78,7 @@ namespace Testing1
             AnAircraft.ImageUrl = TestData;
             // Test to see that the two values are the same
             Assert.AreEqual(AnAircraft.ImageUrl, TestData);
-
+        }
 
         [TestMethod]
         public void QuantityOK()
@@ -117,14 +118,14 @@ namespace Testing1
             // Create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
             // Assign the data to the property
-            AnAircraft.ManufacturedDate = TestData;
+            AnAircraft.ManufacturedDated = TestData;
             // Test to see that the two values are the same
-            Assert.AreEqual(AnAircraft.ManufacturedDate, TestData);
+            Assert.AreEqual(AnAircraft.ManufacturedDated, TestData);
         }
 
 
         [TestMethod]
-                public void AircraftNameOK()
+        public void AircraftNameOK()
         {
 
             // Create an instance of the class we want to test
@@ -139,7 +140,7 @@ namespace Testing1
             // Test to see that the two values are the same
             Assert.AreEqual(AnAircraft.AircraftName, TestData);
         }
-    }
+
         [TestMethod]
         public void FindMethodOK()
         {
@@ -166,11 +167,11 @@ namespace Testing1
             //create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 AircraftId = 14;
-                    //invoke the method 
-                    Found = AnAircraft.Find(AircraftId);
+            Int32 AircraftId = 16;
+            //invoke the method 
+            Found = AnAircraft.Find(AircraftId);
             //check the aircraft id
-            if (AnAircraft.AircraftId != 14)
+            if (AnAircraft.AircraftId != 16)
             {
                 OK = false;
             }
@@ -189,11 +190,11 @@ namespace Testing1
             // Create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             // Create some test data to use with the method
-            Int32 AircraftId = 14;
+            Int32 AircraftId = 16;
             // Invoke the method 
             Found = AnAircraft.Find(AircraftId);
             // Check the aircraft name
-            if (AnAircraft.AircraftName != "Boeing 737")
+            if (AnAircraft.AircraftName != "Test Boeing 123")
             {
                 OK = false;
             }
@@ -202,7 +203,7 @@ namespace Testing1
         }
 
         [TestMethod]
-        public void TestManufacturedDateFound()
+        public void TestManufacturedDatedFound()
         {
             // Create an instance of the class we want to create
             clsAircrafts AnAircraft = new clsAircrafts();
@@ -211,11 +212,11 @@ namespace Testing1
             // Create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             // Create some test data to use with the method
-            Int32 AircraftId = 14;
+            Int32 AircraftId = 16;
             // Invoke the method 
             Found = AnAircraft.Find(AircraftId);
             // Check the manufactured date
-            if (AnAircraft.ManufacturedDate != new DateTime(2020, 1, 1))
+            if (AnAircraft.ManufacturedDated != new DateTime(2003, 02, 06))
             {
                 OK = false;
             }
@@ -233,11 +234,11 @@ namespace Testing1
             // Create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             // Create some test data to use with the method
-            Int32 AircraftId = 14;
+            Int32 AircraftId = 16;
             // Invoke the method 
             Found = AnAircraft.Find(AircraftId);
             // Check the price
-            if (AnAircraft.Price != 100.50m)
+            if (AnAircraft.Price != 12345678.00m)
             {
                 OK = false;
             }
@@ -255,7 +256,7 @@ namespace Testing1
             // Create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             // Create some test data to use with the method
-            Int32 AircraftId = 14;
+            Int32 AircraftId = 16;
             // Invoke the method 
             Found = AnAircraft.Find(AircraftId);
             // Check the availability
@@ -277,11 +278,11 @@ namespace Testing1
             // Create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             // Create some test data to use with the method
-            Int32 AircraftId = 14;
+            Int32 AircraftId = 16;
             // Invoke the method 
             Found = AnAircraft.Find(AircraftId);
             // Check the quantity
-            if (AnAircraft.Quantity != 10)
+            if (AnAircraft.Quantity != 6)
             {
                 OK = false;
             }
@@ -299,11 +300,11 @@ namespace Testing1
             // Create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             // Create some test data to use with the method
-            Int32 AircraftId = 14;
+            Int32 AircraftId = 16;
             // Invoke the method 
             Found = AnAircraft.Find(AircraftId);
             // Check the description
-            if (AnAircraft.Description != "This is a test description.")
+            if (AnAircraft.Description != "This is a test")
             {
                 OK = false;
             }
@@ -321,11 +322,11 @@ namespace Testing1
             // Create a Boolean variable to record if the data is OK (assume it is lol)
             Boolean OK = true;
             // Create some test data to use with the method
-            Int32 AircraftId = 14;
+            Int32 AircraftId = 16;
             // Invoke the method 
             Found = AnAircraft.Find(AircraftId);
             // Check the image URL
-            if (AnAircraft.ImageUrl != "https://example.com/image.jpg")
+            if (AnAircraft.ImageUrl != "null")
             {
                 OK = false;
             }
@@ -333,8 +334,4 @@ namespace Testing1
             Assert.IsTrue(OK);
         }
     }
-}
-
-}
-}
 }
