@@ -47,7 +47,7 @@ public partial class OrdersLogin : System.Web.UI.Page
             //redirect to the list page
             Response.Redirect("OrdersList.aspx");
         }
-        else if (Found == false )
+        else if (Found == false)
         {
             //record the error
             lblError.Text = "Login details are incorrect. Please try again ";
@@ -59,5 +59,12 @@ public partial class OrdersLogin : System.Web.UI.Page
     {
         //redirect to the main menu
         Response.Redirect("TeamMainMenu.aspx");
+    }
+
+
+    protected void btnForgotPassword_Click1(object sender, EventArgs e)
+    {
+        //redirect to the edit page
+        Response.Redirect("UsersDataEntry.aspx");
     }
 }

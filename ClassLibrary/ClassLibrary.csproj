@@ -51,6 +51,7 @@
     <Compile Include="clsOrders.cs" />
     <Compile Include="clsOrdersCollection.cs" />
     <Compile Include="clsOrdersUser.cs" />
+    <Compile Include="clsOrdersUsersCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

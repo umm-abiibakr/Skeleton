@@ -221,12 +221,12 @@ namespace Testing4
             if (FilteredOrders.Count == 2)
             {
                 //check to see that the first record is 146
-                if (FilteredOrders.OrdersList[0].OrderId != 146)
+                if (FilteredOrders.OrdersList[0].OrderId != 4533)
                 {
                     OK = false;
                 }
                 //check to see that the first record is 147
-                if (FilteredOrders.OrdersList[1].OrderId != 147)
+                if (FilteredOrders.OrdersList[1].OrderId != 4534)
                 {
                     OK = false;
                 }
