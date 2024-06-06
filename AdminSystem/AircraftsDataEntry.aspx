@@ -14,6 +14,7 @@
             <asp:TextBox ID="txtAircraftName" runat="server" style="z-index: 1; left: 277px; top: 82px; position: absolute"></asp:TextBox>
             <asp:Label ID="lblAircraftName" runat="server" style="z-index: 1; left: 20px; top: 79px; position: absolute; height: 39px; width: 243px" Text="Aircraft Name"></asp:Label>
             <br />
+            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 510px; top: 43px; position: absolute; height: 39px; width: 78px" Text="Find" />
             <br />
             <asp:Label ID="lblPrice" runat="server" style="z-index: 1; left: 23px; top: 144px; position: absolute" Text="Price" width="243px"></asp:Label>
             <br />
@@ -27,7 +28,6 @@
             <br />
             <br />
             <asp:TextBox ID="txtAircraftId" runat="server" style="z-index: 1; left: 277px; top: 17px; position: absolute"></asp:TextBox>
-            <asp:Label ID="lblQuantity" runat="server" style="z-index: 1; left: 17px; top: 333px; position: absolute" Text="Quantity" width="243px"></asp:Label>
             <asp:TextBox ID="txtQuantity" runat="server" style="z-index: 1; left: 277px; top: 333px; position: absolute"></asp:TextBox>
             <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 53px; top: 586px; position: absolute"></asp:Label>
             <br />
@@ -46,6 +46,8 @@
         <asp:Button ID="tnOK" runat="server" OnClick="btnOK_Click" 
     style="z-index: 1; left: 25px; top: 650px; position: absolute; height: 39px; width: 68px" 
     Text="OK" />
+
+        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 10px; top: 338px; position: absolute" Text="Button" />
 
     </form>
 </body>

@@ -18,7 +18,7 @@ public partial class _1Viewer : System.Web.UI.Page
         Response.Write(AnAircraft.AircraftId);
         Response.Write(AnAircraft.AircraftName);
         Response.Write(AnAircraft.Quantity);
-        Response.Write(AnAircraft.ManufacturedDate);
+        Response.Write(AnAircraft.ManufacturedDated);
         Response.Write(AnAircraft.Description);
         Response.Write(AnAircraft.ImageUrl);
         Response.Write(AnAircraft.Price);

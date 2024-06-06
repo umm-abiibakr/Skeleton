@@ -126,20 +126,35 @@ namespace ClassLibrary
         }
 
 
-        public bool Find(int aircraftId)
+        public bool Find(int AircraftId)
         {
-            // Set the private data members to the test data value
-            mAircraftId = 14;
-            mAircraftName = "Boeing 737";
-            mManufacturedDate = Convert.ToDateTime("01/01/2020");
-            mPrice = 100.50m;
-            mAvailability = true;
-            mQuantity = 10;
-            mDescription = "This is a test description.";
-            mImageUrl = "https://example.com/image.jpg";
-
-            // Always return true
-            return true;
+            //create an instance of the data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the address id to search for 
+            DB.AddParameter("@AircraftId", AircraftId);
+            //execute the stored procedure
+            DB.Execute("sproc_tblAircrafts_FilterByAircraftId");
+            //if one record is found (there should be either one or zero)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members 
+                mAircraftId = Convert.ToInt32(DB.DataTable.Rows[0]["AircraftsId"]);
+                mDescription = Convert.ToString(DB.DataTable.Rows[0]["This is a test description."]);
+                mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["TotalAmount"]);
+                mManufacturedDate = Convert.ToDateTime(DB.DataTable.Rows[0]["ManufacturedDate"]);
+                mAircraftName = Convert.ToString(DB.DataTable.Rows[0]["Boeing 737"]);
+                mAvailability = Convert.ToBoolean(DB.DataTable.Rows[0]["Complete"]);
+                mImageUrl = Convert.ToString(DB.DataTable.Rows[0]["This is a test description."]);
+                mQuantity = Convert.ToInt32(DB.DataTable.Rows[0]["AircraftsId"]);
+                //return that everything worked OK
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating there is a problem 
+                return false;
+            }
         }
     }
 }
