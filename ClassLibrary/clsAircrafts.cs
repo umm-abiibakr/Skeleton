@@ -159,7 +159,7 @@ namespace ClassLibrary
             }
         }
 
-        public string Valid(string aircraftName, string description, string imageUrl, object manufacturedDated)
+        public string Valid(string aircraftName, string description, string imageUrl, object manufacturedDated, string quantity, string description1)
         {
             //create a string variable to store the error
             String Error = "";
@@ -224,6 +224,16 @@ namespace ClassLibrary
                 //record the error
                 Error = Error + "The date was not a valid date : ";
             }
+        }
+
+        public string Valid(string aircraftName, string description, string imageUrl, string manufacturedDated)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Valid(string aircraftName, string description, string imageUrl, object manufacturedDated)
+        {
+            throw new NotImplementedException();
         }
     }
 }
