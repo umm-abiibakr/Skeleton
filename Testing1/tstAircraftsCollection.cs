@@ -131,6 +131,119 @@ namespace Testing1
             Assert.AreEqual(AllAircrafts.ThisAircraft, TestItem);
         }
 
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            // Create an instance of the class we want to create
+            clsAircraftsCollection AllAircrafts = new clsAircraftsCollection();
+            // Create the item of test data
+            clsAircrafts TestItem = new clsAircrafts();
+            // Variable to store the primary key
+            Int32 PrimaryKey = 0;
+            // Set its properties
+            TestItem.Availability = true;
+            TestItem.AircraftName = "Boeing 747";
+            TestItem.ManufacturedDated = DateTime.Now;
+            TestItem.Price = 100000000.00m;
+            TestItem.Description = "Large passenger aircraft";
+            TestItem.Quantity = 10;
+            TestItem.ImageUrl = "http://example.com/boeing747.jpg";
+            // Set ThisAircraft to the test data
+            AllAircrafts.ThisAircraft = TestItem;
+            // Add the record
+            PrimaryKey = AllAircrafts.Add();
+            // Set the primary key of the test data
+            TestItem.AircraftId = PrimaryKey;
+            // Modify the test record
+            TestItem.Availability = false;
+            TestItem.AircraftName = "Airbus A380";
+            TestItem.ManufacturedDated = DateTime.Now;
+            TestItem.Price = 120000000.00m;
+            TestItem.Description = "Double-deck, wide-body, four-engine jet airliner";
+            TestItem.Quantity = 8;
+            TestItem.ImageUrl = "http://example.com/airbusa380.jpg";
+            // Update the record
+            AllAircrafts.Update();
+            // Find the record
+            AllAircrafts.ThisAircraft.Find(PrimaryKey);
+            // Test to see that the two values are the same
+            Assert.AreEqual(AllAircrafts.ThisAircraft, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            // Create an instance of the class we want to create
+            clsAircraftsCollection AllAircrafts = new clsAircraftsCollection();
+            // Create the item of test data
+            clsAircrafts TestItem = new clsAircrafts();
+            // Variable to store the primary key
+            Int32 PrimaryKey = 0;
+            // Set its properties
+            TestItem.Availability = true;
+            TestItem.AircraftName = "Boeing 747";
+            TestItem.ManufacturedDated = DateTime.Now;
+            TestItem.Price = 100000000.00m;
+            TestItem.Description = "Large passenger aircraft";
+            TestItem.Quantity = 10;
+            TestItem.ImageUrl = "http://example.com/boeing747.jpg";
+            // Set ThisAircraft to the test data
+            AllAircrafts.ThisAircraft = TestItem;
+            // Add the record
+            PrimaryKey = AllAircrafts.Add();
+            // Set the primary key of the test data
+            TestItem.AircraftId = PrimaryKey;
+            // Find the record
+            AllAircrafts.ThisAircraft.Find(PrimaryKey);
+            // Delete the record
+            AllAircrafts.Delete();
+            // Now find the record
+            Boolean Found = AllAircrafts.ThisAircraft.Find(PrimaryKey);
+            // Test to see that the record was not found
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void ReportByAircraftNameMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsAircraftsCollection AllAircrafts = new clsAircraftsCollection();
+            //create an instance of the filtered data 
+            clsAircraftsCollection FilteredAircrafts = new clsAircraftsCollection();
+            //apply a blank string (should return all records)
+            FilteredAircrafts.ReportByAircraftName("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllAircrafts.Count, FilteredAircrafts.Count);
+        }
+
+        [TestMethod]
+        public void ReportByAircraftNameTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsAircraftsCollection FilteredAircrafts = new clsAircraftsCollection();
+            //variable to store the outcome
+            Boolean OK = true;
+            //apply a name taht doesnt exist
+            FilteredAircrafts.ReportByAircraftName("Some One");
+            //check that the correct number of records are found
+            if (FilteredAircrafts.Count == 2)
+            {
+                if (FilteredAircrafts.AircraftsList[0].AircraftId != 63)
+                {
+                    OK = false;
+                }
+                if (FilteredAircrafts.AircraftsList[1].AircraftId != 53)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
 
     }
 }

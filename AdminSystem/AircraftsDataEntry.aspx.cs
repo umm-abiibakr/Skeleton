@@ -94,6 +94,21 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
 
             }
+
+            void DisplayAircrafts()
+            {
+                clsAircraftsCollection Aircrafts = new clsAircraftsCollection();
+                Aircrafts.ThisAircraft.Find(AircraftId);
+                txtAircraftId.Text = Aircrafts.ThisAircraft.AircraftId.ToString();
+                txtAircraftName.Text = Aircrafts.ThisAircraft.AircraftName.ToString();
+                txtDescription.Text = Aircrafts.ThisAircraft.Description.ToString();
+                txtImageUrl.Text = Aircrafts.ThisAircraft.ImageUrl.ToString();
+                txtPrice.Text = Aircrafts.ThisAircraft.Price.ToString();
+                txtQuantity.Text = Aircrafts.ThisAircraft.Quantity.ToString();
+                txtManufacturedDate.Text = Aircrafts.ThisAircraft.ManufacturedDated.ToString();
+                chkAvailability.Checked = Aircrafts.ThisAircraft.Availability;
+            }
+
         }
     }
 }
