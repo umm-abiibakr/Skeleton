@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body style="height: 412px; font-weight: 700">
+<body style="height: 412px; font-weight: 700; align-content:center; background-color: antiquewhite">
     <form id="form1" runat="server">
         <div>
         </div>

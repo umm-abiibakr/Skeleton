@@ -53,6 +53,7 @@
     <Compile Include="tstOrders.cs" />
     <Compile Include="tstOrdersCollection.cs" />
     <Compile Include="tstOrdersUser.cs" />
+    <Compile Include="tstOrdersUsersCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
