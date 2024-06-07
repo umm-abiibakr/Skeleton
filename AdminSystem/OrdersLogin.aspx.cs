@@ -65,6 +65,6 @@ public partial class OrdersLogin : System.Web.UI.Page
     protected void btnForgotPassword_Click1(object sender, EventArgs e)
     {
         //redirect to the edit page
-        Response.Redirect("ResetPassword.aspx");
+        Response.Redirect("UsersDataEntry.aspx");
     }
 }
