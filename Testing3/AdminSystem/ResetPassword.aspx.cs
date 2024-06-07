@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 public partial class UsersDataEntry : System.Web.UI.Page
 {
     //variable to store the primary key  with page level scope
-    Int32 UserID;
+    String UserName;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -25,22 +25,17 @@ public partial class UsersDataEntry : System.Web.UI.Page
         string UserName = txtUserName.Text;
         //capture the Password
         string Password = txtPassword.Text;
-        //capture the Department
-        string Department = txtDepartment.Text;
+
         //variable to store any error messages
         string Error = "";
         //validate the data
-        Error = AUser.Valid(UserName, Password, Department);
+        Error = AUser.Valid(UserName, Password);
         if (Error == "")
         {
-            //capture the user id
-            AUser.UserID = UserID;
             //capture the UserName
             AUser.UserName = UserName;
             //capture the Password
             AUser.Password = Password;
-            //capture the Department
-            AUser.Department = Department;
 
             //create a new instance of the orders collection
             clsOrdersUsersCollection UsersList = new clsOrdersUsersCollection();
@@ -48,7 +43,7 @@ public partial class UsersDataEntry : System.Web.UI.Page
             //update record
             
             //find the record to update
-            UsersList.ThisUser.Find(UserID);
+            UsersList.ThisUser.Find(UserName);
             //set the ThisOrder property
             UsersList.ThisUser = AUser;
             //update the new record

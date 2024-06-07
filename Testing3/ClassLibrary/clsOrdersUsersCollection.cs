@@ -51,16 +51,6 @@ namespace ClassLibrary
             DB.Execute("sproc_tblUsers_ForgotPW");
         }
 
-        public void Delete()
-        {
-            //deletes the record pointed to by thisOrder
-            //connect to the database
-            clsDataConnection DB = new clsDataConnection();
-            //set the parameteers for the stored procedure
-            DB.AddParameter("@UserID", mThisUser.UserID);
-            //execute the stored procedure
-            DB.Execute("sproc_tblUsers_Delete");
-        }
     }
 
     }

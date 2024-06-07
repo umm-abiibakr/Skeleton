@@ -153,7 +153,6 @@ namespace ClassLibrary
                 Error = Error + "The password must not be more than 30 : ";
             }
 
-            
             //return the error message
             return Error;
         }
