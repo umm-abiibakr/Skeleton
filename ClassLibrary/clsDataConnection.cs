@@ -199,6 +199,11 @@ public class clsDataConnection
         throw new NotImplementedException();
     }
 
+    public void AddParameter(string v, object orderItems_id)
+    {
+        throw new NotImplementedException();
+    }
+
     public Int32 Count
     //property that returns the count of records in the query results
     {
