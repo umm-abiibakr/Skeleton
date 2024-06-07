@@ -45,10 +45,8 @@ namespace ClassLibrary
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("@UserID", mThisUser.UserID);
             DB.AddParameter("@UserName", mThisUser.UserName);
             DB.AddParameter("@Password", mThisUser.Password);
-            DB.AddParameter("@Department", mThisUser.Department);
             //execute the query returning the primary key value
             DB.Execute("sproc_tblUsers_ForgotPW");
         }
