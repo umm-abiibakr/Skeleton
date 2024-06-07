@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAircrafts.cs" />
+    <Compile Include="clsAircraftsCollection.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsCustomerCollection.cs" />
     <Compile Include="clsCustomerUser.cs" />
@@ -52,7 +54,25 @@
     <Compile Include="clsOrdersCollection.cs" />
     <Compile Include="clsOrdersUser.cs" />
     <Compile Include="clsOrdersUsersCollection.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\ClassLibrary.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ClassLibrary.dll" />
+    <Content Include="bin\Debug\ClassLibrary.pdb" />
+    <Content Include="obj\Debug\ClassLibrary.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ClassLibrary.dll" />
+    <Content Include="obj\Debug\ClassLibrary.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
