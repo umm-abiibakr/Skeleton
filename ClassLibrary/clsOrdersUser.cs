@@ -96,14 +96,14 @@ namespace ClassLibrary
             }
         }
 
-        public bool Find(int UserID)
+        public bool Find(string UserName)
         {
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
             //add the parameters for the user's userName and password to search for
-            DB.AddParameter("@UserID", UserID);
+            DB.AddParameter("@UserName", UserName);
             //execute the stored procedure 
-            DB.Execute("sproc_tblUsers_FindUserID");
+            DB.Execute("sproc_tblUsers_FindUserName");
             //if one record is found (there should be either one or none)
             if (DB.Count == 1)
             {
@@ -121,7 +121,7 @@ namespace ClassLibrary
             }
         }
 
-        public string Valid(string userName, string password, string department)
+        public string Valid(string userName, string password)
         {
 
             //create a string variable to store the error
@@ -153,18 +153,6 @@ namespace ClassLibrary
                 Error = Error + "The password must not be more than 30 : ";
             }
 
-            //if the department is blank
-            if (department.Length == 0)
-            {
-                //record the error
-                Error = Error + "The department may not be blank : ";
-            }
-            //if the username is greater than 50
-            if (department.Length > 50)
-            {
-                //record the error
-                Error = Error + "The department must not be more than 50 : ";
-            }
             //return the error message
             return Error;
         }
