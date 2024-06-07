@@ -79,7 +79,7 @@ namespace Testing4
             Boolean Found = false;
             //create some test data to use with the method
             string UserName = "Zainab";
-            string Password = "ZainabSPassword1";
+            string Password = "ZainabSPW";
             //invoke the method 
             Found = AUser.FindUser(UserName, Password);
             //test to see if the result is true
@@ -97,7 +97,7 @@ namespace Testing4
             Boolean OK = true;
             //create some test data to use with the method
             string UserName = "Zainab";
-            string Password = "ZainabSPassword1";
+            string Password = "ZainabSPW";
             //invoke the method 
             Found = AUser.FindUser(UserName, Password);
             //check the user id property
