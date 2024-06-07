@@ -189,6 +189,7 @@ public class clsDataConnection
         return Convert.ToInt32(returnValue.Value);
     }
 
+
     public Int32 Count
     //property that returns the count of records in the query results
     {

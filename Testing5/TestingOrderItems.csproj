@@ -49,8 +49,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsorderItemsCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstOrderitems.cs" />
+    <Compile Include="tstorderItemsCollection.cs" />
+    <Compile Include="tstorderItemsUsers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

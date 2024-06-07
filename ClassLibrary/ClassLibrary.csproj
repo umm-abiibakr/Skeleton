@@ -47,6 +47,8 @@
     <Compile Include="clsCustomerUser.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsorderitems.cs" />
+    <Compile Include="clsOrderItemsCollection.cs" />
+    <Compile Include="clsorderItemsUsers.cs" />
     <Compile Include="clsOrders.cs" />
     <Compile Include="clsOrdersCollection.cs" />
     <Compile Include="clsOrdersUser.cs" />
