@@ -95,9 +95,6 @@ namespace Testing1
 
         }
 
-
-
-
         [TestMethod]
         public void TestAircraftIdFound()
         {
@@ -120,7 +117,6 @@ namespace Testing1
             Assert.IsTrue(OK);
 
         }
-
 
         [TestMethod]
         public void TestManufacturedDatedFound()
@@ -230,5 +226,4 @@ namespace Testing1
             }
         }
     }
-    
 }

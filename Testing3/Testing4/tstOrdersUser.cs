@@ -73,14 +73,13 @@ namespace Testing4
         [TestMethod]
         public void FindUserMethodOK()
         {
-
             //create an instance of the class we want to create
             clsOrdersUser AUser = new clsOrdersUser();
             //create aBoolean variable to store the results of the validation
             Boolean Found = false;
             //create some test data to use with the method
             string UserName = "Zainab";
-            string Password = "ZainabSPassword";
+            string Password = "ZainabSPW";
             //invoke the method 
             Found = AUser.FindUser(UserName, Password);
             //test to see if the result is true
@@ -98,7 +97,7 @@ namespace Testing4
             Boolean OK = true;
             //create some test data to use with the method
             string UserName = "Zainab";
-            string Password = "ZainabSPassword";
+            string Password = "ZainabSPW";
             //invoke the method 
             Found = AUser.FindUser(UserName, Password);
             //check the user id property
