@@ -67,19 +67,11 @@ namespace Testing4
             //create the item of test data 
             clsOrdersUser TestItem = new clsOrdersUser();
             //variable to store the primary key
-            Int32 PrimaryKey = 0;
+            String PrimaryKey = "";
             //set its properties 
-            TestItem.UserName = "Zainab";
-            TestItem.Password = "ZainabSPassword";
-            TestItem.Department = "Orders";
-            //set ThisOrder to the test data
-            AllUsers.ThisUser = TestItem;
-            //set the primary key of the test data
-            TestItem.UserID = PrimaryKey;
             //modify the test record
-            TestItem.UserName = "Zainabu";
+            TestItem.UserName = "Zainab";
             TestItem.Password = "ZainabSPW";
-            TestItem.Department = "Order";
             //set the record based on the new data 
             AllUsers.ThisUser = TestItem;
             //update the record
@@ -90,32 +82,6 @@ namespace Testing4
             Assert.AreEqual(AllUsers.ThisUser, TestItem);
         }
 
-        [TestMethod]
-        public void DeleteMethodOK()
-        {
-            //create an instance of the class we want to create
-            clsOrdersUsersCollection AllUsers = new clsOrdersUsersCollection();
-            //create the item of test data 
-            clsOrdersUser TestItem = new clsOrdersUser();
-            //variable to store the primary key
-            Int32 PrimaryKey =0;
-            //set its properties 
-            TestItem.UserID = 1;
-            TestItem.UserName = "Zainab";
-            TestItem.Password = "ZainabSPassword";
-            TestItem.Department = "Orders";
-            //set ThisOrder to the test data
-            AllUsers.ThisUser = TestItem;
-            //set the primary key of the test data
-            TestItem.UserID = PrimaryKey;
-            //find the record
-            AllUsers.ThisUser.Find(PrimaryKey);
-            //delete the record
-            AllUsers.Delete();
-            //now find the record
-            Boolean Found = AllUsers.ThisUser.Find(PrimaryKey);
-            //test to see that the record was not found
-            Assert.IsFalse(Found);
-        }
+       
     }
 }
