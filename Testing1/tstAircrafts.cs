@@ -1,6 +1,9 @@
 ﻿using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Reflection;
 
 namespace Testing1
 {
@@ -16,7 +19,7 @@ namespace Testing1
             Assert.IsNotNull(AnAircraft);
         }
 
-
+        }
 
         [TestMethod]
         public void PriceOK()
@@ -43,7 +46,7 @@ namespace Testing1
 
             // Create some test data to assign to the property
             string TestData = "This is a test description.";
-        }
+
 
 
 
@@ -116,6 +119,13 @@ namespace Testing1
             //test to see if the result is correct
             Assert.IsTrue(OK);
 
+        }
+
+            {
+                OK = false;
+            }
+            // Test to see if the result is correct
+            Assert.IsTrue(OK);
         }
 
         [TestMethod]
@@ -225,5 +235,6 @@ namespace Testing1
                 OK = false;
             }
         }
+
     }
 }
