@@ -37,17 +37,15 @@
             <br />
             <asp:CheckBox ID="chkAvailability" runat="server" style="z-index: 1; left: 277px; top: 463px; position: absolute; right: 15px" Text="Availability" />
             <br />
-            <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 125px; top: 649px; position: absolute; height: 41px; width: 107px" Text="Cancel" />
+            <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 125px; top: 649px; position: absolute; height: 44px; width: 107px" Text="Cancel" />
             <br />
         </div>
         <asp:Label ID="lblAircraftId" runat="server" style="z-index: 1; left: 18px; top: 18px; position: absolute; right: 790px; height: 23px" Text="Aircraft Id" width="243px"></asp:Label>
         <p>
             &nbsp;</p>
         <asp:Button ID="tnOK" runat="server" OnClick="btnOK_Click" 
-    style="z-index: 1; left: 25px; top: 650px; position: absolute; height: 39px; width: 68px" 
+    style="z-index: 1; left: 25px; top: 650px; position: absolute; height: 44px; width: 76px" 
     Text="OK" />
-
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 10px; top: 338px; position: absolute" Text="Button" />
 
     </form>
 </body>

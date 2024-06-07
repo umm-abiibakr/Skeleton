@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Xml.Linq;
 
 namespace ClassLibrary
 {
@@ -95,18 +97,18 @@ namespace ClassLibrary
             }
         }
         //private data member for the aircraft id
-        private DateTime mManufacturedDate;
+        private DateTime mManufacturedDated;
         public DateTime ManufacturedDated
         {
             get
             {
                 //this line of code sends data out
-                return mManufacturedDate;
+                return mManufacturedDated;
             }
             set
             {
                 //this line of code allows data in
-                mManufacturedDate = value;
+                mManufacturedDated = value;
             }
         }
         //private data member for the aircraft id
@@ -141,7 +143,7 @@ namespace ClassLibrary
                 mAircraftId = Convert.ToInt32(DB.DataTable.Rows[0]["AircraftsId"]);
                 mDescription = Convert.ToString(DB.DataTable.Rows[0]["This is a test description."]);
                 mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["TotalAmount"]);
-                mManufacturedDate = Convert.ToDateTime(DB.DataTable.Rows[0]["ManufacturedDate"]);
+                mManufacturedDated = Convert.ToDateTime(DB.DataTable.Rows[0]["ManufacturedDate"]);
                 mAircraftName = Convert.ToString(DB.DataTable.Rows[0]["Boeing 737"]);
                 mAvailability = Convert.ToBoolean(DB.DataTable.Rows[0]["Complete"]);
                 mImageUrl = Convert.ToString(DB.DataTable.Rows[0]["This is a test description."]);
@@ -155,6 +157,83 @@ namespace ClassLibrary
                 //return false indicating there is a problem 
                 return false;
             }
+        }
+
+        public string Valid(string aircraftName, string description, string imageUrl, object manufacturedDated, string quantity, string description1)
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //create a temporary variable to store the date values
+            DateTime DateComp = DateTime.Now;
+            //if the Name is blank
+            if (aircraftName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The name may not be blank : ";
+            }
+            //if the name is greater than 50 characters
+            if (aircraftName.Length > 50)
+            {
+                //record the error
+                Error = Error + "The name must be less than 50 characters : ";
+            }
+
+            //if the imageurl is blank
+            if (imageUrl.Length == 0)
+            {
+                //record the error
+                Error = Error + "The imageUrl may not be blank : ";
+            }
+            //if the name is greater than 50 characters
+            if (imageUrl.Length > 50)
+            {
+                //record the error
+                Error = Error + "The imageUrl must be less than 50 characters : ";
+            }
+
+            //if the description is blank
+            if (description.Length == 0)
+            {
+                //record the error
+                Error = Error + "The description may not be blank : ";
+            }
+
+
+            //create an instance of DateTime to compare with DateTemp
+            //in the if statements
+
+            try
+            {
+                //copy the orderDate value to the DateTemp variable
+                ManufacturedDated = Convert.ToDateTime(ManufacturedDated);
+                //check to see if the data is less than today's date
+                if (ManufacturedDated < DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                //check to see if the date is greater than today's date
+                if (ManufacturedDated > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
+            }
+
+            catch
+            {
+                //record the error
+                Error = Error + "The date was not a valid date : ";
+            }
+        }
+
+        public string Valid(string aircraftName, string description, string imageUrl, string manufacturedDated)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Valid(string aircraftName, string description, string imageUrl, object manufacturedDated)
+        {
+            throw new NotImplementedException();
         }
     }
 }
